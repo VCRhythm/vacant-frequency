@@ -1,0 +1,17 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+  <strong><%= post.title %></strong>
+  -- <%= post.date.to_formatted_s(:long_ordinal) %>
+  </div>
+  <div class="panel-body">
+    <%= post.body %>
+  </div>
+  <div class="panel-footer">
+  <%= link_to "Comment, please!", new_post_comment_path(post), class: "btn btn-default pull-right" %>
+    <h4>Comments</h4>
+    <ul class="media-list">
+      <%= render post.comments %> 
+    </ul>  
+  </div>
+</div>
+

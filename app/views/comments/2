@@ -1,0 +1,37 @@
+<h1>Listing comments</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Subject</th>
+      <th>Body</th>
+      <th>Date</th>
+      <th>Username</th>
+      <th>Email</th>
+      <th>Website</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @comments.each do |comment| %>
+      <tr>
+        <td><%= comment.subject %></td>
+        <td><%= comment.body %></td>
+        <td><%= comment.date %></td>
+        <td><%= comment.username %></td>
+        <td><%= comment.email %></td>
+        <td><%= comment.website %></td>
+        <td><%= link_to 'Show', post_comment_path(comment, @post) %></td>
+        <td><%= link_to 'Edit', edit_post_comment_path(comment) %></td>
+        <td><%= link_to 'Destroy', post_comment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Comment', new_comment_path %>

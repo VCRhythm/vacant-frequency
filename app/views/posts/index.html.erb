@@ -1,0 +1,32 @@
+<% content_for :head do %>
+  <%= stylesheet_link_tag 'posts' %>
+<% end %>
+
+<% content_for :navbar do %>
+  <%= render 'shared/navbar_top' %>
+<% end %>
+
+<% content_for :body do %>
+
+<%= render @posts[0] %>
+
+<% if @posts.size > 1 %>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @posts[1..@posts.size].each do |post| %>
+      <tr>
+        <td><%= link_to post.title, post %></td>
+        <td><%= post.date.to_formatted_s(:long_ordinal) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<% end %>
+<% end %>

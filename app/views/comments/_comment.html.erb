@@ -1,0 +1,29 @@
+<li class="media">
+<div class="media-body">
+<p>
+  <h4 class="media-heading"><strong><%= comment.subject %></strong>
+  on <%= comment.date.to_formatted_s(:long_ordinal) %>
+  </h4>
+  <i>by</i> <%= comment.username %>
+</p>
+
+<p>
+  <%= comment.body %>
+</p>
+
+<% if !comment.email.empty? || !comment.website.empty? %>
+<p><small>
+  <% if !comment.email.empty? %>
+    <%= comment.email %>
+  <% end %>
+  <% if !comment.email.empty? && !comment.website.empty? %>
+    <br />
+  <% end %>
+  <% if !comment.website.empty? %>
+    <%= comment.website %>
+  <% end %>
+  </small>
+</p>
+<% end %>
+</div>
+</li>
