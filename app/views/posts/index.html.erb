@@ -8,7 +8,7 @@
 
 <% content_for :body do %>
 
-<%= render @posts[0] %>
+<%= render 'post_short', post: @posts[0] %>
 
 <% if @posts.size > 1 %>
 <table class="table">
