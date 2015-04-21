@@ -3,9 +3,11 @@
 <% end %>
 
 <% content_for :navbar do %>
-  <%= image_tag 'background.jpg', class: 'img-responsive center-block' %>
   <%= render 'shared/navbar_bottom' %>
 <% end %>
 
 <% content_for :body do %>
+  <div id="bg">
+    <%= image_tag 'background.jpg' %>
+  </div>
 <% end %>
