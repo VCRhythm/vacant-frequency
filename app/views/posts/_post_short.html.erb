@@ -4,7 +4,7 @@
   -- <%= post.date.to_formatted_s(:long_ordinal) %>
   </div>
   <div class="panel-body">
-    <%= post.body[0..100] %><%= link_to "...", post %>
+    <%= post.body[0..100].html_safe %><%= link_to "...", post %>
   </div>
 </div>
 
