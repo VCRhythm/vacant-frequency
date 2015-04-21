@@ -1,7 +1,7 @@
 Vacantfrequency::Application.routes.draw do
   devise_for :users
   resources :posts do
-    resources :comments, shallow: true
+    resources :comments
   end
  
   get 'blog' => 'posts#index'

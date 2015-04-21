@@ -1,4 +1,11 @@
-<%= @comment %>
+<% content_for :navbar do %>
+  <%= render 'shared/navbar_top' %>
+<% end %>
 
-<%= link_to 'Edit', edit_comment_path(@comment) %> |
-<%= link_to 'Back', comments_path %>
+<% content_for :body do %>
+  <ul class="media-list">
+    <%= render @comment %>
+  </ul>
+
+  <%= link_to 'Back to Post', post_path(@post) %>
+<% end %>

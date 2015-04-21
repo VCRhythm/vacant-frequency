@@ -1,5 +1,9 @@
 class CommentsController < ApplicationController
+  before_action :set_post, only: [:index, :new, :create, :update, :destroy]
+  before_action :set_tab
   before_action :set_comment, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:edit]
+  before_action :check_for_admin, only: [:edit, :update, :destroy]
 
   # GET /comments
   # GET /comments.json
@@ -10,22 +14,22 @@ class CommentsController < ApplicationController
   # GET /comments/1
   # GET /comments/1.json
   def show
+    @post = @comment.post
   end
 
   # GET /comments/new
   def new
-    @post = Post.find(params[:post_id])
     @comment = @post.comments.build
   end
 
   # GET /comments/1/edit
   def edit
+    @post = @comment.post
   end
 
   # POST /comments
   # POST /comments.json
   def create
-    @post = Post.find(params[:post_id])
     @comment = @post.comments.new(comment_params)
     @comment.date = Time.now;
 
@@ -45,7 +49,7 @@ class CommentsController < ApplicationController
   def update
     respond_to do |format|
       if @comment.update(comment_params)
-        format.html { redirect_to @comment, notice: 'Comment was successfully updated.' }
+        format.html { redirect_to @post, notice: 'Comment was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -59,12 +63,16 @@ class CommentsController < ApplicationController
   def destroy
     @comment.destroy
     respond_to do |format|
-      format.html { redirect_to comments_url }
+      format.html { redirect_to @post, notice: 'Comment was successfuly deleted.' }
       format.json { head :no_content }
     end
   end
 
   private
+    def set_post
+      @post = Post.find(params[:post_id])
+    end
+    
     # Use callbacks to share common setup or constraints between actions.
     def set_comment
       @comment = Comment.find(params[:id])
@@ -73,5 +81,15 @@ class CommentsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def comment_params
       params.require(:comment).permit(:subject, :body, :username, :email, :website)
+    end
+
+    def set_tab
+      @active_tab = 1 
+    end
+
+    def check_for_admin
+      if(!current_user.admin)
+        redirect_to posts_url, alert: "'Quit screwin' around!"
+      end
     end
 end

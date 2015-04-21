@@ -3,8 +3,5 @@
 <% end %>
 
 <% content_for :body do %>
-  <h1>Editing comment</h1>
-
-  <%= render 'form' %>
-
-<% end %>
+  <%= render 'comments', post: @post %>
+<% end %> 
