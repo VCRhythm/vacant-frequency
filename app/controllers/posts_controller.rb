@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  before_action :set_tab
   before_action :set_post, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [:new, :edit]
   before_action :check_for_admin, only: [:new, :edit, :create, :update, :destroy]
@@ -65,6 +66,10 @@ class PostsController < ApplicationController
   end
 
   private
+    def set_tab
+      @active_tab = 1 
+    end
+
     def check_for_admin
       if(!current_user.admin)
         redirect_to posts_url, alert: "'Quit screwin' around!"
