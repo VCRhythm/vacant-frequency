@@ -4,8 +4,11 @@ Vacantfrequency::Application.routes.draw do
     resources :comments, shallow: true
   end
  
-  root 'home#index'
   get 'blog' => 'posts#index'
+  get 'hot_frog' => 'static_pages#hot_frog'
+  get 'the_pool' => 'static_pages#the_pool'
+
+  root 'static_pages#home'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
