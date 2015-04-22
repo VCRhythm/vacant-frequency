@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Vacant Frequency</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
@@ -20,7 +23,11 @@
     <div class="alert alert-danger"><%= alert %><button type="button" class="close" data-dismiss="alert" aria-lavel="Close"><span aria-hidden="true">&times;</span></button></div>
   <% end %>
  
-  <%= yield :body %>
-  </div>
+  <%= yield :body %></div>
+  <footer class="footer">
+    <div class="container">
+      <p class="text-muted pull-right">Vacant Frequency LLC (C) 2015</p>
+    </div>
+  </footer>
 </body>
 </html>
