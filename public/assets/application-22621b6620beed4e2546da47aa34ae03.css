@@ -8,28 +8,7 @@
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
  *
-
-
  */
-
-/* line 2, /home/tristan/vacantfrequency/app/assets/stylesheets/home.css.scss */
-#bg {
-  position: fixed;
-  top: 0;
-  left: 0;
-  min-width: 100%;
-  min-height: 100%;
-}
-/* line 10, /home/tristan/vacantfrequency/app/assets/stylesheets/home.css.scss */
-#bg img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  margin: auto;
-  min-width: 50%;
-  min-height: 50%;
-}
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 /* line 9, /home/tristan/.rvm/gems/ruby-2.1.1/gems/bootstrap-sass-3.3.4.1/assets/stylesheets/bootstrap/_normalize.scss */
 html {
@@ -8608,7 +8587,40 @@ button.close {
     display: none !important;
   }
 }
-/* line 5, /home/tristan/vacantfrequency/app/assets/stylesheets/scaffolds.css.scss */
+/* line 2, /media/tristan/MAIN/vacantfrequency/app/assets/stylesheets/scaffolds.css.scss */
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+/* line 8, /media/tristan/MAIN/vacantfrequency/app/assets/stylesheets/scaffolds.css.scss */
+body {
+  margin-bottom: 30px;
+}
+
+/* line 13, /media/tristan/MAIN/vacantfrequency/app/assets/stylesheets/scaffolds.css.scss */
+.body-container {
+  margin-top: 70px;
+  margin-bottom: 40px;
+}
+
+/* line 19, /media/tristan/MAIN/vacantfrequency/app/assets/stylesheets/scaffolds.css.scss */
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 30px;
+  padding-top: 5px;
+  background-color: black;
+  text-align: right;
+}
+/* line 28, /media/tristan/MAIN/vacantfrequency/app/assets/stylesheets/scaffolds.css.scss */
+.footer .container {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+/* line 35, /media/tristan/MAIN/vacantfrequency/app/assets/stylesheets/scaffolds.css.scss */
 .media {
   border: solid 3px grey;
   padding-left: 10px;
@@ -8619,4 +8631,23 @@ button.close {
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
+}
+
+/* line 2, /media/tristan/MAIN/vacantfrequency/app/assets/stylesheets/home.css.scss */
+#bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
+/* line 10, /media/tristan/MAIN/vacantfrequency/app/assets/stylesheets/home.css.scss */
+#bg img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  min-width: 50%;
+  min-height: 50%;
 }
