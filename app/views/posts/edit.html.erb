@@ -2,12 +2,17 @@
   <%= render 'shared/navbar_top' %>
 <% end %>
 
+<% content_for :head do %>
+  <style>
+    body{ background-color: white; }
+  </style>
+<% end %>
+
 <% content_for :body do %>
+  <h1>Editing post</h1>
 
-<h1>Editing post</h1>
+  <%= render 'form' %>
 
-<%= render 'form' %>
-
-<%= link_to 'Show', @post %> |
-<%= link_to 'Back', posts_path %>
+  <%= link_to 'Show', @post %> |
+  <%= link_to 'Back', posts_path %>
 <% end %>

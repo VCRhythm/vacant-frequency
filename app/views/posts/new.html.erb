@@ -2,6 +2,12 @@
   <%= render 'shared/navbar_top' %>
 <% end %>
 
+<% content_for :head do %>
+  <style>
+    body{ background-color: white; }
+  </style>
+<% end %>
+
 <% content_for :body do %>
   <h1>New post <%= alert %> <%= @notice %></h1>
 
