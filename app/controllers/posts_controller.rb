@@ -47,6 +47,7 @@ class PostsController < ApplicationController
   def update
       respond_to do |format|
         if @post.update(post_params)
+          @post.short_body = @post.body.split('</p>')[0]+'</p>'
           format.html { redirect_to @post, notice: 'Post was successfully updated.' }
           format.json { head :no_content }
         else
