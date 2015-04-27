@@ -29,6 +29,7 @@ class PostsController < ApplicationController
   def create
       @post = Post.new(post_params)
       @post.body = @post.body.html_safe
+      @post.short_body = @post.body.split('</p>')[0]+'</p>'
 
       respond_to do |format|
         if @post.save
