@@ -2,12 +2,6 @@
   <%= render 'shared/navbar_top' %>
 <% end %>
 
-<% content_for :head do %>
-  <style>
-    body{ background-color: white; }
-  </style>
-<% end %>
-
 <% content_for :body do %>
 
 <%= render 'post_short', post: @posts[0] %>
@@ -32,4 +26,7 @@
 </table>
 <% end %>
 
+  <style>
+    body{ background-color: white; }
+  </style>
 <% end %>
