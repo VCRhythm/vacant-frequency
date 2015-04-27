@@ -13,7 +13,12 @@
   left: 0;
   right: 0;
   margin: auto;
-  min-width: 50%;
+  min-width: 100%;
   min-height: 50%;
  }
+ .frog-bg {
+    top: auto;
+    bottom: 0;    
+    min-width: auto;
+  }
 }

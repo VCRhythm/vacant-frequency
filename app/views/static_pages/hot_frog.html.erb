@@ -1,9 +1,9 @@
 <% content_for :navbar do %>
-  <%= render 'shared/navbar_bottom' %>
+  <%= render 'shared/navbar_top' %>
 <% end %>
 
 <% content_for :body do %>
   <div id="bg">
-    <%= image_tag 'hot_frog_background.png' %>
+    <%= image_tag 'hot_frog_background.png', class: 'frog-bg' %>
   </div>
 <% end %>

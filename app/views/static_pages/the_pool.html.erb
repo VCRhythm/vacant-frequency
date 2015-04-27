@@ -1,10 +1,13 @@
+<% content_for :head do %>
+  <style>
+    body{ background-color: black; }
+  </style>
+<% end %>
 <% content_for :navbar do %>
-  <%= render 'shared/navbar_bottom' %>
+  <%= render 'shared/navbar_top' %>
 <% end %>
 
 <% content_for :body do %>
-  <div id="bg">
-    <%= image_tag 'the_pool_background.png' %>
-  </div>
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/aoGszefFQnE" frameborder="0" allowfullscreen></iframe>
+  <iframe width="1280" height="720" src="https://www.youtube.com/embed/aoGszefFQnE?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+  <iframe width="1280" height="720" src="https://www.youtube.com/embed/gxkxdemVKHs?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
 <% end %>
