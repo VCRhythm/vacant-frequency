@@ -7,7 +7,7 @@ Vacantfrequency::Application.routes.draw do
   get 'blog' => 'posts#index'
   get 'hot_frog' => 'static_pages#hot_frog'
   get 'the_pool' => 'static_pages#the_pool'
-  get '54321' => 'static_pages#54321'
+  get '54321' => 'static_pages#fivefourthreetwoone'
 
   root 'static_pages#home'
 

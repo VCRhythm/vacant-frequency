@@ -12,7 +12,7 @@ class StaticPagesController < ApplicationController
     @active_tab = 3
   end
 
-  def 54321
+  def fivefourthreetwoone
     @active_tab = 4
   end
 
