@@ -3,7 +3,10 @@
 <% end %>
 
 <% content_for :body do %>
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/TLtH78uU-hY?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+  <video id="bg-video" class="video" autoplay muted loop>
+    <source src="https://s3.amazonaws.com/vacant-frequency/54321.mp4" type="video/mpeg">
+    <source src="https://s3.amazonaws.com/vacant-frequency/54321.ogg" type="video/ogg">
+  </video>
   <style>
     body{ background-color: black; }
   </style>
